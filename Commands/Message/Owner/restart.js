@@ -1,4 +1,6 @@
-/* eslint-disable no-unused-vars */
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {

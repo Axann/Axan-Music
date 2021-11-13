@@ -8,14 +8,14 @@ const Discord = require("discord.js");
 
 
 module.exports = async function(client, message) {
-  
+
     if (message.author.bot) return;
     if (!message.guild) return;
 
-  
+
 // ─────────────────────────────────── || PREFIX || ─────────────────────────────────── //
-  
-  
+
+
     let PREFIX = message.client.prefix;
     const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -62,7 +62,7 @@ module.exports = async function(client, message) {
         return message.channel.send({ embeds: [embederror] });
     }
 
-  
+
     if (command.memberPermissions && !message.member.permissions.has(command.memberPermissions)) return message.channel.send(`❌ | You don't have permission to run this command!`);
     if (command.botPermissions && !message.guild.me.permissions.has(command.botPermissions)) return message.channel.send(`❌ | I don't have permission to run this command!`);
     if (command.owner && !message.client.owner.includes(message.author.id)) return;

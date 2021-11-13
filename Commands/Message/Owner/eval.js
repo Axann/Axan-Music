@@ -1,5 +1,12 @@
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js");
 const { post } = require("node-superfetch");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "eval",
@@ -12,9 +19,15 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: true,
-    async execute(client, message, args) {
-        const embed = new MessageEmbed()
-            .addField("Input", "```js\n" + args.join(" ") + "```");
+    async execute(client, message, args, color) {
+
+
+// ─────────────────────────────────── || LEK URIP || ─────────────────────────────────── //
+
+
+      const embed = new Discord.MessageEmbed()
+        .setColor(color)
+        .addField("Input", "```js\n" + args.join(" ") + "```");
 
         try {
             const code = args.join(" ");
@@ -34,10 +47,10 @@ module.exports = {
             if (output.length > 1024) {
                 // If the output was more than 1024 characters, we're gonna export them into the hastebin.
                 const { body } = await post("https://hastebin.com/documents").send(output);
-                embed.addField("Output", `https://hastebin.com/${body.key}.js`).setColor(message.client.color);
+                embed.addField("Output", `https://hastebin.com/${body.key}.js`).setColor(color);
                 // Sometimes, the body.key will turn into undefined. It might be the API is under maintenance or broken.
             } else {
-                embed.addField("Output", "```js\n" + output + "```").setColor(message.client.color)
+                embed.addField("Output", "```js\n" + output + "```").setColor(color)
             }
 
             message.channel.send({ embeds: [embed] });
