@@ -22,13 +22,8 @@ module.exports = async function(client, message) {
     if (message.content.match(new RegExp(`^<@!?${message.client.user.id}>( |)$`))) {
       
       const ngentot = new Discord.MessageEmbed()
-      
-        .setTitle('nghentot bang')
-        .setDescription('```') 
-      
-      
-      
-      return message.channel.send('ngentot');
+        .setDescription(`Hello **${message.author.tag}**, my prefix is **${PREFIX}**.\nUse **${PREFIX}help** to get the list of the commands!`) 
+      return message.channel.send({embeds: [ngentot]});
     }
 
     const prefixRegex = new RegExp(`^(<@!?${message.client.user.id}>|${escapeRegex(PREFIX)})\\s*`);
