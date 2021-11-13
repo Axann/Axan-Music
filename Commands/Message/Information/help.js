@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const { stripIndents } = require("common-tags");
+const Discord = require("discord.js")
 
 module.exports = {
     name: "help",
@@ -13,7 +14,8 @@ module.exports = {
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
     async execute(client, message, args) {
-        const embed = message.client.embed.embed1(message);
+      
+        const embed = new Discord.MessageEmbed()
 
         if (!args[0]) {
             const commands = (category) => {
@@ -21,10 +23,10 @@ module.exports = {
             }
 
             const infoFilter1 = message.client.categories.filter(cat => cat !== "Owner");
-            const info = infoFilter1.map(cat => stripIndents`${message.client.emoji.folder}**${cat[0].toUpperCase() + cat.slice(1)}**\n${commands(cat)}`).reduce((string, category) => string + "\n\n" + category);
+         //   const info = infoFilter1.map(cat => stripIndents`${message.client.emoji.folder}**${cat[0].toUpperCase() + cat.slice(1)}**\n${commands(cat)}`).reduce((string, category) => string + "\n\n" + category);
     
             embed.setTitle(`ℹ️ Command List`)
-            embed.setDescription(`● To get help on a specific command type \`${message.client.prefix}help <command>\`!\n\n${info}`);
+            embed.setDescription(`● To get help on a specific command type \`${message.client.prefix}help <command>\`!\n\n`);
             message.channel.send({ embeds: [embed] });
         } else {
             let command = message.client.commands.find(cmd => cmd.name === args[0]) || message.client.commands.find(cmd => cmd.aliases.includes(args[0]))
