@@ -1,5 +1,10 @@
-/* eslint-disable no-unused-vars */
+// ─────────────────────────────────── || MODULE NGENTOT || ─────────────────────────────────── //
+
+
 const { MessageEmbed } = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT IMPORT || ─────────────────────────────────── //
 
 module.exports = {
   
@@ -18,7 +23,7 @@ module.exports = {
     async execute(client, message, args) {
         const embed = new MessageEmbed()
             .setColor(message.client.color)
-            .setDescription(`Ping : **${message.client.ws.ping}**ms`);
+            .setDescription(`Punyamu Pink bang? : **${message.client.ws.ping}**ms`);
         message.channel.send({ embeds: [embed] });
     }
 }

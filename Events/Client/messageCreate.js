@@ -1,4 +1,12 @@
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
 const { MessageEmbed } = require("discord.js");
+
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = async function(client, message) {
     if (message.author.bot) return;
@@ -14,6 +22,7 @@ module.exports = async function(client, message) {
 
     const [ matchedPrefix ] = message.content.match(prefixRegex);
 
+    const color = message.guild.me.displayHexColor;
     const args = message.content.slice(matchedPrefix.length).trim().split(/ +/g);
     const commandName = args.shift().toLowerCase();
 
