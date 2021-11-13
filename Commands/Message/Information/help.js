@@ -1,6 +1,12 @@
-/* eslint-disable no-unused-vars */
-const { stripIndents } = require("common-tags");
+// ─────────────────────────────────── || MODULE KONTOLLLL || ─────────────────────────────────── //
+
+
 const Discord = require("discord.js")
+const { stripIndents } = require("common-tags");
+
+
+// ─────────────────────────────────── || EXPORT IMPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "help",
@@ -23,10 +29,10 @@ module.exports = {
             }
 
             const infoFilter1 = message.client.categories.filter(cat => cat !== "Owner");
-         //   const info = infoFilter1.map(cat => stripIndents`${message.client.emoji.folder}**${cat[0].toUpperCase() + cat.slice(1)}**\n${commands(cat)}`).reduce((string, category) => string + "\n\n" + category);
+            const info = infoFilter1.map(cat => stripIndents`${message.client.emoji.folder}**${cat[0].toUpperCase() + cat.slice(1)}**\n${commands(cat)}`).reduce((string, category) => string + "\n\n" + category);
     
             embed.setTitle(`ℹ️ Command List`)
-            embed.setDescription(`● To get help on a specific command type \`${message.client.prefix}help <command>\`!\n\n`);
+            embed.setDescription(`● To get help on a specific command type \`${message.client.prefix}help <command>\`!\n\n${info}`);
             message.channel.send({ embeds: [embed] });
         } else {
             let command = message.client.commands.find(cmd => cmd.name === args[0]) || message.client.commands.find(cmd => cmd.aliases.includes(args[0]))
