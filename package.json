@@ -1,13 +1,13 @@
 {
-  "name": "distubeexample",
-  "version": "1.0.0",
-  "description": "This is a simple Distube example music bot.",
+  "name": "Ngontol'z Bot",
+  "version": "gaada versi versi ya anjc",
+  "description": "This is a super bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "1mgr007",
-  "license": "MIT",
+  "author": "ahsan ganteng",
+  "license": "ahsan gans",
   "dependencies": {
     "@discordjs/opus": "^0.6.0",
     "@discordjs/voice": "^0.7.2",
@@ -28,7 +28,8 @@
     "opusscript": "^0.0.8",
     "systeminformation": "^5.9.9",
     "utf-8-validate": "^5.0.7",
-    "zlib-sync": "^0.1.7"
+    "zlib-sync": "^0.1.7",
+    "events": "^3.3.0"
   },
   "engines": {
     "node": "17.x"
