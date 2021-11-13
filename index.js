@@ -1,15 +1,22 @@
-// Module Imports
+// ─────────────────────────────────── || MODAL MODULE || ─────────────────────────────────── //
+
+
 const { Client } = require("discord.js");
 const { readdirSync } = require("fs");
 const config = require("./config.json");
 const DisTube = require('distube');
 const { SpotifyPlugin } = require("@distube/spotify");
 
+
+// ─────────────────────────────────── || CLIENT JAOK REVISI TEROS || ─────────────────────────────────── //
+
+
 const client = new Client({
     allowedMentions: { parse: ['users', 'roles'], repliedUser: true },
     partials: ['MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER', 'USER'],
     intents: 32767
 });
+
 
 const distube = new DisTube.DisTube(client, {
 	searchSongs: 0,
@@ -38,35 +45,50 @@ const distube = new DisTube.DisTube(client, {
 
 client.distube = distube;
 
+
+// ─────────────────────────────────── || INGFO DI TERIMA || ─────────────────────────────────── //
+
+
 client.prefix = config.Prefix;
 client.owner = config.OwnerId;
 client.color = config.Color;
 client.musicimg = config.MusicImg;
 
-client.logger = require('./Utils/logger');
 
-// Utils Handling
+// ─────────────────────────────────── || PENGTIL NGACENG || ─────────────────────────────────── //
+
+
+client.logger = require('./Pentils/logger');
+
 client.logger.log(`Loading Handling Pentils`, "handling");
 readdirSync(`./Pentils/`).filter(path => path.split(".")[0] !== "logger").forEach(file => {
 	let Name = file.split(".")[0];
-    let Req = require(`./Utils/${file}`);
-    client.logger.log(`Loading Utils ${Name}`, "util");
+    let Req = require(`./Pentils/${file}`);
+    client.logger.log(`Loading Pentils ${Name}`, "util");
 	client[Name] = Req;
 });
 
-// Handling
-readdirSync(`./Handling/`).forEach(file => {
+
+// ─────────────────────────────────── || MANDOR PENGGELAPAN DANA || ─────────────────────────────────── //
+
+
+readdirSync(`./Mandor/`).forEach(file => {
     let Name = file.split(".")[0];
-    client.logger.log(`Loading Handling ${Name}`, "handling");
-    require(`./Handling/${file}`)(client);
+    client.logger.log(`Loading Mandor ${Name}`, "handling");
+    require(`./Mandor/${file}`)(client);
 });
 
-// Error Handler
+
+// ─────────────────────────────────── || MISAL EROR AKU YO NANGIS || ─────────────────────────────────── //
+
+
 client.on('error', error => console.log(error));
 client.on('warn', info => console.log(info));
 process.on('unhandledRejection', error => console.log(error));
 process.on('uncaughtException', error => console.log(error));
 
+
+// ─────────────────────────────────── || TOKEN LISTRIK BUNYI || ─────────────────────────────────── //
 
 
 client.login(process.env.TOKEN);
