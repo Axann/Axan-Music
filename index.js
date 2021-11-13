@@ -46,8 +46,8 @@ client.musicimg = config.MusicImg;
 client.logger = require('./Utils/logger');
 
 // Utils Handling
-client.logger.log(`Loading Handling Utils`, "handling");
-readdirSync(`./Utils/`).filter(path => path.split(".")[0] !== "logger").forEach(file => {
+client.logger.log(`Loading Handling Pentils`, "handling");
+readdirSync(`./Pentils/`).filter(path => path.split(".")[0] !== "logger").forEach(file => {
 	let Name = file.split(".")[0];
     let Req = require(`./Utils/${file}`);
     client.logger.log(`Loading Utils ${Name}`, "util");
@@ -67,4 +67,6 @@ client.on('warn', info => console.log(info));
 process.on('unhandledRejection', error => console.log(error));
 process.on('uncaughtException', error => console.log(error));
 
-client.login(config.Token);
+
+
+client.login(process.env.TOKEN);

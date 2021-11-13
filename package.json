@@ -29,10 +29,11 @@
     "systeminformation": "^5.9.9",
     "utf-8-validate": "^5.0.7",
     "zlib-sync": "^0.1.7",
-    "events": "^3.3.0"
+    "events": "^3.3.0",
+    "node-event": "^0.0.0"
   },
   "engines": {
-    "node": "17.x"
+    "node": "16.x"
   },
   "devDependencies": {
     "eslint": "^8.2.0"

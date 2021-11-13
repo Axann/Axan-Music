@@ -1,11 +1,10 @@
 {
-    "Token": "",
-    "Prefix": "",
+    "Prefix": "-",
     "OwnerId": [],
     "Color": "#000",
     "youtubeCookie": "",
     "youtubeIdentityToken": "",
-    "clientId": "",
-    "clientSecret": "",
+    "clientId": "f27cd7fe3427430d8a4b5a48cad476c7",
+    "clientSecret": "e52efd093d7a4fce881bfe218dc4b33e",
     "MusicImg": ""
 }

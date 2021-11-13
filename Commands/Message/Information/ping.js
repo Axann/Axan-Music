@@ -2,6 +2,7 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
+  
     name: "ping",
     category: "Information",
     aliases: [],
@@ -12,6 +13,8 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+  
+  
     async execute(client, message, args) {
         const embed = new MessageEmbed()
             .setColor(message.client.color)
