@@ -1,5 +1,8 @@
-/* eslint-disable no-unused-vars */
+
+
 const { MessageEmbed } = require("discord.js");
+
+
 
 module.exports = {
     name: "autoplay",
@@ -12,8 +15,18 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+  
+  
     async execute(client, message, args) {
+      
+      
         const memberVC = message.member.voice.channel;
+      
+
+      
+      
+      
+      
         if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
 
         const clientVC = message.guild.me.voice.channel;
