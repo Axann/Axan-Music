@@ -23,28 +23,61 @@ module.exports = {
 // ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
 
 
-    async execute(client, message, args) {
+    async execute(client, message, args, color) {
 
-		const memberVC = message.member.voice.channel;
+
+// ─────────────────────────────────── || GAGAL || ─────────────────────────────────── //
+
+
+        const embedgagal = new Discord.MessageEmbed()
+            .setColor("RED")
+
+        // must vc
+        
+        const memberVC = message.member.voice.channel;
+
+        if (!memberVC) {
+            embedgagal.setDescription(`${message.client.mustVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
+      
+        // on vc
+      
         const clientVC = message.guild.me.voice.channel;
+      
+        if (clientVC && clientVC === memberVC) {
+            embedgagal.setDescription(`${message.client.onVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
+      
+        // same vc
+      
+        if (clientVC && clientVC !== memberVC) {
+            embedgagal.setDescription(`${message.client.sameVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
-		if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
-		if (clientVC && clientVC === memberVC) return message.channel.send(`❌ | I'm already on your voice channel!`);
-		if (clientVC && clientVC !== memberVC) return message.channel.send(`❌ | You must be in the same channel as ${message.client.user}!`);
 
-		const embed = new MessageEmbed()
+// ─────────────────────────────────── || SUKSES & GAGAL || ─────────────────────────────────── //
+
+
+        const embed = new Discord.MessageEmbed()
             .setColor(message.client.color)
-            .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
 
-		message.client.distube.voices.join(memberVC)
-			.then(voice => {
-				embed.setDescription(`✔️ | Successfully **Join** the voice channel.`);
-				message.channel.send({ embeds: [embed] });
-			})
-			.catch(error => {
-				console.error(error);
-				return message.channel.send(`❌ | An error occurred while trying to join the voice channel.\nTry using the **Play** command!`);
-			});
+        message.client.distube.voices.join(memberVC).then(voice => {
+          
+        embed.setDescription(`✔️ | Successfully **Join** the voice channel.`);
+        message.channel.send({ embeds: [embed] });
+          
+        })
+          
+        .catch(error => {
+            console.error(error);
+            return message.channel.send(`❌ | An error occurred while trying to join the voice channel.\nTry using the **Play** command!`);
+        });
+
 
     }
+
+
 }
