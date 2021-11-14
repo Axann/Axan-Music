@@ -59,6 +59,9 @@ client.musicimg = config.MusicImg;
 
 client.mustVC = audit.mustVC;
 client.noVC = audit.noVC;
+client.sameVC = audit.sameVC;
+client.noMUSIC = audit.audnoMUSIC;
+client.suksesAUTOPLAY = audit.suksesAUTOPLAY;
 
 
 // ─────────────────────────────────── || PENGTIL NGACENG || ─────────────────────────────────── //

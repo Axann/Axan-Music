@@ -20,7 +20,7 @@ module.exports = {
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
       
-      
+
 // ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
 
   
@@ -48,12 +48,12 @@ module.exports = {
           return message.channel.send({ embeds: [embedgagal] });
         }
 
-        if (memberVC !== clientVC) return message.channel.send('<:N_:848429469688397854> | You must be in the same channel as ${message.client.user}!');
+        if (memberVC !== clientVC) return message.channel.send(message.client.sameVC);
 
         const queue = message.client.distube.getQueue(message);
       
         if (!queue){
-          embedgagal.setDescription('<:N_:848429469688397854> ・ There is no music playing!')
+          embedgagal.setDescription(message.client.sameVC)
           return message.channel.send({ embeds: [embedgagal] });
         };
 
