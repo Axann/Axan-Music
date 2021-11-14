@@ -11,5 +11,11 @@
     "errorJOIN" : "<:N_:848429469688397854> ・ An error occurred while trying to join the voice channel. Try using the **play** command!",
     "suksesJOIN" : "<:Y_:848429615323021354> ・ Successfully **join** the voice channel.",
   
+    "suksesLEAVE" : "<:Y_:848429615323021354> ・ Successfully **leave** the voice channel.",
+  
+    "suksesLOOP" : "<:Y_:848429615323021354> ・ **Looping** a song.",
+    "suksesLOOPALL" : ":Y_:848429615323021354> ・ **Looping** all the queue.",
+    "suksesLOOPSTOP" : ":Y_:848429615323021354> ・ Stop **looping** song.",
+  
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }

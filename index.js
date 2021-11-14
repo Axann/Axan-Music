@@ -69,6 +69,12 @@ client.suksesOFFautoplay = audit.suksesOFFautoplay;
 client.errorJOIN = audit.errorJOIN;
 client.suksesJOIN = audit.suksesJOIN;
 
+client.suksesLEAVE = audit.suksesLEAVE;
+
+client.suksesLOOP = audit.suksesLOOP
+client.suksesLOOPALL = audit.suksesLOOPALL
+client.suksesLOOPSTOP = audit.suksesLOOPSTOP
+
 client.errorARGS = audit.errorARGS;
 
 

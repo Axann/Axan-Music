@@ -1,4 +1,11 @@
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "loop",
@@ -11,52 +18,97 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-    async execute(client, message, args) {
+
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
+    async execute(client, message, args, color) {
+      
+      
+// ─────────────────────────────────── || GAGAL || ─────────────────────────────────── //
+
+
+        const embedgagal = new Discord.MessageEmbed()
+            .setColor('RED')
+
+        // must vc
+        
         const memberVC = message.member.voice.channel;
-        if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
+        if (!memberVC) {
+            embedgagal.setDescription(`${message.client.mustVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        } 
 
+        // no vc
+      
         const clientVC = message.guild.me.voice.channel;
-        if (!clientVC) return message.channel.send(`❌ | I'm not on any voice channel!`);
+        if (!clientVC) {
+            embedgagal.setDescription(`${message.client.noVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
-        if (memberVC !== clientVC) return message.channel.send(`❌ | You must be in the same channel as ${message.client.user}!`);
+        // same vc
+      
+        if (memberVC !== clientVC) {
+            return message.channel.send(`${message.client.sameVC}`)
+        }
 
+        // queue
+      
         const queue = message.client.distube.getQueue(message);
-        if (!queue) return message.channel.send(`❌ | There is no music playing!`);
+        if (!queue){
+            embedgagal.setDescription(`${message.client.noMUSIC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        };
 
-        const embed = new MessageEmbed()
-            .setColor(message.client.color)
-            .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
+      
+// ─────────────────────────────────── || SUKSES || ─────────────────────────────────── //
 
-        const embederror = new MessageEmbed()
-            .setColor("#ff0000");
 
+        const embedsukses = new Discord.MessageEmbed()
+            .setColor(color)
+        
+    
         const input = args[0];
 
         const disable = 0;
         const song = 1;
         const queues = 2;
 
+      
+        // sukses
+      
         if (!input) {
-            message.client.distube.setRepeatMode(message, song);
-
-            embed.setDescription(`🔁 | **Looping** a song.`);
-            message.channel.send({ embeds: [embed] });
-        } else if (input === "lagu" || input === "song") {
-            message.client.distube.setRepeatMode(message, song);
-
-            embed.setDescription(`🔁 | **Looping** a song.`);
-            message.channel.send({ embeds: [embed] });
-        } else if (input === "queue" || input === "all") {
-            message.client.distube.setRepeatMode(message, queues);
-
-            embed.setDescription(`🔁 | **Looping** all the queue.`);
-            message.channel.send({ embeds: [embed] });
-        } else if (input === "off") {
-            message.client.distube.setRepeatMode(message, disable);
-
-            embed.setDescription(`🔁 | Stop **looping** song.`);
-            message.channel.send({ embeds: [embed] });
-        } else {
+        message.client.distube.setRepeatMode(message, song);
+            embedsukses.setDescription(`${message.client.suksesLOOP}`)
+        message.channel.send({ embeds: [embedsukses] });
+        } 
+      
+        else if (input === "lagu" || input === "song") {
+        message.client.distube.setRepeatMode(message, song);
+            embedsukses.setDescription(`${message.client.suksesLOOP}`)
+        message.channel.send({ embeds: [embedsukses] });
+        }
+      
+        // queue
+      
+        else if (input === "queue" || input === "all") {
+        message.client.distube.setRepeatMode(message, queues);
+            embedsukses.setDescription(`${message.client.suksesLOOPALL}`)
+        message.channel.send({ embeds: [embedsukses] });
+        }
+      
+        // off
+      
+        else if (input === "off") {
+        message.client.distube.setRepeatMode(message, disable);
+            embedsukses.setDescription(`${message.client.suksesLOOPSTOP}`)
+        message.channel.send({ embeds: [embed] });
+        } 
+      
+      
+      else {
             embederror.setDescription(`❌ | Please enter valid arguments!
 Loop Song: ${message.client.prefix}loop song
 Loop Queue: ${message.client.prefix}loop queue
