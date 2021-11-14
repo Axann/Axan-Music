@@ -28,7 +28,7 @@ module.exports = {
       
       
         const embedgagal = new Discord.MessageEmbed()
-            .setColor(color)
+            .setColor('RED')
       
         const memberVC = message.member.voice.channel;
       
