@@ -11,7 +11,7 @@ module.exports = {
     name: "queue",
     category: "Music",
     aliases: [ "q" ],
-    description: "Queue Music",
+    description: "Look a queue",
     args: false,
     usage: [],
     examples: [],

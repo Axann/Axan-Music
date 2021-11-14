@@ -12,7 +12,7 @@ module.exports = {
     name: "lyrics",
     category: "Music",
     aliases: [ "ly", "lyric" ],
-    description: "Show Lyric a song",
+    description: "Show Lyric for u",
     args: false,
     usage: [],
     examples: [],

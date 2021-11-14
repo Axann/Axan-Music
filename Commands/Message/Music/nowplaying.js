@@ -11,7 +11,7 @@ module.exports = {
     name: "nowplaying",
     category: "Music",
     aliases: [ "np" ],
-    description: "Show playing song",
+    description: "Shows the currently playing music",
     args: false,
     usage: [],
     examples: [],

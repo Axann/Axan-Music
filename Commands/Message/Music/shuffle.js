@@ -12,7 +12,7 @@ module.exports = {
     name: "shuffle",
     category: "Music",
     aliases: [],
-    description: "Shuffle thr queue",
+    description: "Shuffle the queue",
     args: false,
     usage: [],
     examples: [],

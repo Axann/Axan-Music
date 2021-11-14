@@ -12,7 +12,7 @@ module.exports = {
     name: "skip",
     category: "Music",
     aliases: [ "s" ],
-    description: "Skip Music",
+    description: "Skip music",
     args: false,
     usage: [],
     examples: [],

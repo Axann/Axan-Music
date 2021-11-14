@@ -11,7 +11,7 @@ module.exports = {
     name: "join",
     category: "Music",
     aliases: [ "j" ],
-    description: "Join in ur vc",
+    description: "Join to u",
     args: false,
     usage: [],
     examples: [],

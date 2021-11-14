@@ -8,10 +8,11 @@ const Discord = require("discord.js");
 
 
 module.exports = {
+  
     name: "skipto",
     category: "Music",
     aliases: [ "jump" ],
-    description: "Skip Music",
+    description: "Skip music",
     args: false,
     usage: [],
     examples: [],

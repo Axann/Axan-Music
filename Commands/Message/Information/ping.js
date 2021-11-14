@@ -12,7 +12,7 @@ module.exports = {
     name: "ping",
     category: "Information",
     aliases: [],
-    description: "Check Ping Bot",
+    description: "Check ping bot",
     args: false,
     usage: [],
     examples: [],

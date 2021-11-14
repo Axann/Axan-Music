@@ -11,7 +11,7 @@ module.exports = {
     name: "loop",
     category: "Music",
     aliases: [ "repeat" ],
-    description: "Stop thr queue",
+    description: "Loop ur music",
     args: false,
     usage: [],
     examples: [],

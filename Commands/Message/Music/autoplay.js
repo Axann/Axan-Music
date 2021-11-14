@@ -12,7 +12,7 @@ module.exports = {
     name: "autoplay",
     category: "Music",
     aliases: [ "ap" ],
-    description: "AutoPlay sum random music",
+    description: "Autoplay sum random music",
     args: false,
     usage: [],
     examples: [],

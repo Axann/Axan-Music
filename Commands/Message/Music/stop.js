@@ -8,10 +8,11 @@ const Discord = require("discord.js");
 
 
 module.exports = {
+  
     name: "stop",
     category: "Music",
     aliases: [],
-    description: "Stop Music",
+    description: "Stop music",
     args: false,
     usage: [],
     examples: [],

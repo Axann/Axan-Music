@@ -35,11 +35,11 @@ module.exports = {
             }
             
             embed.setTitle(`COMMAND LIST`)
-            embed.setDescription(`Help on a specific command type \`${message.client.prefix}help <command>\`!\n\n`);
-            embed.addField('MUSIC' , '```autoplay , filter , join , leave , loop , lyrics , nowplaying , pause , play , previous , queue , resume , search , shuffle , skip , skipto , stop , volume.```')
-            embed.addField('OTHER' , '```help , ping , status.```')
-            embed.setFooter('ahsan & zicc developer')
-            embed.setTimestamp()
+            embed.setDescription(`Help on a specific command type \`${message.client.prefix}help <command>\``);
+            embed.addField('MUSIC' , '```yaml\nautoplay , filter , join , leave , loop , lyrics , nowplaying , pause , play , previous , queue , resume , search , shuffle , skip , skipto , stop , volume```')
+            embed.addField('INFO' , '```yaml\nhelp , ping , status```')
+            embed.setFooter('made with lope by ahsan & zicc developer')
+            //embed.setTimestamp()
             message.channel.send({ embeds: [embed] });
           
         } else {
@@ -82,10 +82,10 @@ module.exports = {
           
           
             //embed.setTitle(`${message.client.prefix}${name}`)
-            embed.setDescription(`\`\`\`${description}\`\`\``)
-            embed.addField('Usage', `${usage}`)
+            embed.setDescription(`\`\`\`yaml\n${description}\`\`\``)
+            embed.addField('Usage', `\`\`\`yaml\n${usage}\`\`\``)
             //embed.addField('Examples', `${example}`)
-            embed.addField('Aliases', `${aliases}`)
+            embed.addField('Aliases', `\`\`\`yaml\n${aliases}\`\`\``)
             //embed.addField('Member Permission', `\`${memberPermissions}\``);
             message.channel.send({ embeds: [embed] });
         }

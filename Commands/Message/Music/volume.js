@@ -8,10 +8,11 @@ const Discord = require("discord.js");
 
 
 module.exports = {
+  
     name: "volume",
     category: "Music",
     aliases: [ "v" ],
-    description: "Set Volume",
+    description: "Set volume",
     args: false,
     usage: [ "<Number of volume between 0 - 100>" ],
     examples: [ "100" ],
