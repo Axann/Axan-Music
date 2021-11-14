@@ -2,7 +2,7 @@
 
 
 const Discord = require("discord.js");
-const audit = require("./audit.json");
+const config = require("./config.json");
 
 
 // ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
@@ -38,7 +38,7 @@ module.exports = {
       
       
         if (!memberVC) {
-          embedgagal.setDescription(audit.mustVC)
+          embedgagal.setDescription(config.mustVC)
           return message.channel.send({ embeds: [embedgagal] });
         } 
 
