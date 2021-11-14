@@ -71,9 +71,13 @@ client.suksesJOIN = audit.suksesJOIN;
 
 client.suksesLEAVE = audit.suksesLEAVE;
 
-client.suksesLOOP = audit.suksesLOOP
-client.suksesLOOPALL = audit.suksesLOOPALL
-client.suksesLOOPSTOP = audit.suksesLOOPSTOP
+client.suksesLOOP = audit.suksesLOOP;
+client.suksesLOOPALL = audit.suksesLOOPALL;
+client.suksesLOOPSTOP = audit.suksesLOOPSTOP;
+
+client.errorLYRIC1 = audit.errorLYRIC1;
+client.errorLYRIC2 = audit.errorLYRIC2;
+client.errorLYRIC3 = audit.errorLYRIC3;
 
 client.errorARGS = audit.errorARGS;
 

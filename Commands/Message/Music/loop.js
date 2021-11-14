@@ -51,7 +51,8 @@ module.exports = {
         // same vc
       
         if (memberVC !== clientVC) {
-            return message.channel.send(`${message.client.sameVC}`)
+            embedgagal.setDescription(`${message.client.sameVC}`);
+            return message.channel.send({ embeds: [embedgagal] });
         }
 
         // queue
@@ -81,13 +82,13 @@ module.exports = {
       
         if (!input) {
         message.client.distube.setRepeatMode(message, song);
-            embedsukses.setDescription(`${message.client.suksesLOOP}`)
+            embedsukses.setDescription(`${message.client.suksesLOOP}`);
         message.channel.send({ embeds: [embedsukses] });
         } 
       
         else if (input === "lagu" || input === "song") {
         message.client.distube.setRepeatMode(message, song);
-            embedsukses.setDescription(`${message.client.suksesLOOP}`)
+            embedsukses.setDescription(`${message.client.suksesLOOP}`);
         message.channel.send({ embeds: [embedsukses] });
         }
       
@@ -95,7 +96,7 @@ module.exports = {
       
         else if (input === "queue" || input === "all") {
         message.client.distube.setRepeatMode(message, queues);
-            embedsukses.setDescription(`${message.client.suksesLOOPALL}`)
+            embedsukses.setDescription(`${message.client.suksesLOOPALL}`);
         message.channel.send({ embeds: [embedsukses] });
         }
       
@@ -103,17 +104,14 @@ module.exports = {
       
         else if (input === "off") {
         message.client.distube.setRepeatMode(message, disable);
-            embedsukses.setDescription(`${message.client.suksesLOOPSTOP}`)
+            embedsukses.setDescription(`${message.client.suksesLOOPSTOP}`);
         message.channel.send({ embeds: [embedsukses] });
         } 
       
         // gagal
       
         else {
-            embedgagal.setDescription(`❌ | Please enter valid arguments!
-Loop Song: ${message.client.prefix}loop song
-Loop Queue: ${message.client.prefix}loop queue
-Turn OFF Loop: ${message.client.prefix}loop loop`);
+            embedgagal.setDescription(`${message.client.errorARGS}`);
             message.channel.send({ embeds: [embedgagal] });
         }
     }

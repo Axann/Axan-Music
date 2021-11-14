@@ -36,7 +36,7 @@ module.exports = {
         
         const memberVC = message.member.voice.channel;
         if (!memberVC) {
-            embedgagal.setDescription(`${message.client.mustVC}`)
+            embedgagal.setDescription(`${message.client.mustVC}`);
             return message.channel.send({ embeds: [embedgagal] });
         }
       
@@ -44,14 +44,14 @@ module.exports = {
       
         const clientVC = message.guild.me.voice.channel;
         if (clientVC && clientVC === memberVC) {
-            embedgagal.setDescription(`${message.client.noVC}`)
+            embedgagal.setDescription(`${message.client.noVC}`);
             return message.channel.send({ embeds: [embedgagal] });
         }
       
         // same vc
       
         if (clientVC && clientVC !== memberVC) {
-            embedgagal.setDescription(`${message.client.sameVC}`)
+            embedgagal.setDescription(`${message.client.sameVC}`);
             return message.channel.send({ embeds: [embedgagal] });
         }
 

@@ -13,9 +13,13 @@
   
     "suksesLEAVE" : "<:Y_:848429615323021354> ・ Successfully **leave** the voice channel.",
   
-    "suksesLOOP" : "<:Y_:848429615323021354> ・ **Looping** a song.",
-    "suksesLOOPALL" : ":Y_:848429615323021354> ・ **Looping** all the queue.",
-    "suksesLOOPSTOP" : ":Y_:848429615323021354> ・ Stop **looping** song.",
+    "suksesLOOP" : "<:Y_:848429615323021354> ・ **Looping** a song. Turn off using **loop off** command!",
+    "suksesLOOPALL" : "<:Y_:848429615323021354> ・ **Looping** all the queue.",
+    "suksesLOOPSTOP" : "<:Y_:848429615323021354> ・ Stop **looping** song.",
+  
+    "errorLYRIC1" : "<:N_:848429469688397854> ・ Please enter the title of the song!",
+    "errorLYRIC2" : "<:N_:848429469688397854> ・ No lyrics found!",
+    "errorLYRIC3" : "<:N_:848429469688397854> ・ An error occurred while searching for song lyrics.",
   
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }
