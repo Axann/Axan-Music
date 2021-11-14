@@ -7,33 +7,31 @@ const Discord = require("discord.js");
 // ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
 
 
-module.exports = async (client, queue, song, message) => {
+module.exports = async (client, queue, song) => {
   
-  if (!message.guild) return;
-const color = message.guild.me.displayHexColor;
   
     let duration = song.duration * 1000;
 
   
     if (song.playlist) {
         let thing = new Discord.MessageEmbed()
-            .setColor(color)
+            //.setColor(color)
             .setDescription(`Start playing playlist \n[${song.playlist.name}](${song.playlist.url}) \`[${song.playlist.songs.length} songs]\`\n\nStart playing \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\``)
             //.setThumbnail(song.thumbnail)
             //.setFooter(`Request by ${song.user.tag}`, song.user.displayAvatarURL());
-        queue.textChannel.send({ embeds: [thing] }).then(message => setTimeout(() => { message.delete() }, duration));
+        queue.textChannel.send({ embeds: [thing] }).then(message => thing.setColor(message.guild.me.displayHexColor) .setTimeout(() => { message.delete() }, duration));
 
     } 
   
   
     else {
         let thing = new Discord.MessageEmbed()
-            .setColor(color)
+           // .setColor(color)
             .setTitle('Start playing')
             .setDescription(`\`[${song.formattedDuration}]\`  ・  [${song.name}](${song.url})`)
             //.setThumbnail(song.thumbnail)
             //.setFooter(`Request by ${song.user.tag}`, song.user.displayAvatarURL());
-        queue.textChannel.send({ embeds: [thing] }).then(message => setTimeout(() => { message.delete() }, duration));
+        queue.textChannel.send({ embeds: [thing] }).then(message => .setColor(message.guild.me.displayHexColor) setTimeout(() => { message.delete() }, duration));
     }
 
 
