@@ -10,9 +10,9 @@ const Discord = require("discord.js");
 module.exports = async (client, queue, song) => {
 
     let embed = new Discord.MessageEmbed()
-        //.setColor(client.color)
-            .setTitle('Add song')
-            .setDescription(`\`[${song.formattedDuration}]\`  ・  [${song.name}](${song.url})`)
+        .setColor("GREEN")
+        .setTitle('Add song')
+        .setDescription(`\`[${song.formattedDuration}]\`  ・  [${song.name}](${song.url})`)
     queue.textChannel.send({ embeds: [embed] });
 
 }

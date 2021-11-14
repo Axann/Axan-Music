@@ -12,6 +12,6 @@ module.exports = async (client, message) => {
   
     let embed = new Discord.MessageEmbed()
         .setColor("RED")
-        .setDescription(`<:N_:848429469688397854> ・ !`);
+        .setDescription(`<:N_:848429469688397854> ・ Invalid!`);
     message.channel.send({ embeds: [embed] });
 }

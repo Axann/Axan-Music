@@ -6,10 +6,10 @@ module.exports = async (client, channel, err) => {
 
     let embed = new MessageEmbed()
         .setColor("RED")
-        .setDescription(`${client.emoji.warn} An error encountered: \n${err}`);
+        .setDescription(`<:N_:848429469688397854> ・ An error encountered: \n${err}`);
     channel.send({ embeds: [embed] });
 
     let owner = client.users.cache.get(client.owner);
-    owner.send({ content: `${client.emoji.warn} An error encountered: \n${err}\n<#${channel.id}>` });
+    owner.send({ content: `<:N_:848429469688397854> ・ An error encountered: \n${err}\n<#${channel.id}>` });
 
 }

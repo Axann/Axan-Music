@@ -15,7 +15,7 @@ module.exports = async (client, queue, song) => {
   
     if (song.playlist) {
         let thing = new Discord.MessageEmbed()
-            //.setColor(color)
+            .setColor("GREEN")
             .setDescription(`Start playing playlist \n[${song.playlist.name}](${song.playlist.url}) \`[${song.playlist.songs.length} songs]\`\n\nStart playing \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\``)
             //.setThumbnail(song.thumbnail)
             //.setFooter(`Request by ${song.user.tag}`, song.user.displayAvatarURL());
@@ -26,7 +26,7 @@ module.exports = async (client, queue, song) => {
   
     else {
         let thing = new Discord.MessageEmbed()
-            //.setColor(color)
+            .setColor("GREEN")
             .setTitle('Start playing')
             .setDescription(`\`[${song.formattedDuration}]\`  ・  [${song.name}](${song.url})`)
             //.setThumbnail(song.thumbnail)

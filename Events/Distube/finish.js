@@ -9,6 +9,8 @@ const Discord = require("discord.js");
 
 module.exports = async (client, queue) => {
 
-    queue.textChannel.send(`❌ | No more song in queue`);
-
+    let embed = new Discord.MessageEmbed()
+        .setColor("RED")
+        .setDescription(`<:N_:848429469688397854> ・ No more song in queue`);
+    queue.textChannel.send({ embeds: [embed] });
 }
