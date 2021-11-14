@@ -1,12 +1,18 @@
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = async (client, queue, song) => {
 
-    let embed = new MessageEmbed()
-        .setColor(client.color)
-        .setDescription(`🎵 Add Song \n[${song.name}](${song.url}) - \`[${song.formattedDuration}]\``)
-        .setThumbnail(song.thumbnail)
-        .setFooter(`Request by ${song.user.tag}`, song.user.displayAvatarURL());
+    let embed = new Discord.MessageEmbed()
+        //.setColor(client.color)
+            .setTitle('Add song')
+            .setDescription(`\`[${song.formattedDuration}]\`  ・  [${song.name}](${song.url})`)
     queue.textChannel.send({ embeds: [embed] });
 
 }

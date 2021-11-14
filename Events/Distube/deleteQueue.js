@@ -1,4 +1,12 @@
-/* eslint-disable no-unused-vars */
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
+
 module.exports = async (client, queue) => {
 
 }
