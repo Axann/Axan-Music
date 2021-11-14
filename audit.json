@@ -1,7 +1,7 @@
 {
     "mustVC" : "<:N_:848429469688397854> ・ You must be in a voice channel!",
     "noVC" : "<:N_:848429469688397854> ・ Im not on any voice channel!",
-    "sameVC" : "<:N_:848429469688397854> | You must be in the same channel as ${message.client.user}!",
+    "sameVC" : "<:N_:848429469688397854> | You must be in the same channel!",
     "noMUSIC" : "<:N_:848429469688397854> ・ There is no music playing!",
   
     "suksesONautoplay" : "<:Y_:848429615323021354> ・ Successfully activated **autoplay** mode.",

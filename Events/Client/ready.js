@@ -14,7 +14,7 @@ module.exports = async (client) => {
 // ─────────────────────────────────── || ACTIVITY || ─────────────────────────────────── //
 
 
-    let statuses = [ 'NGONTOLZ' , 'PENTIL DEVELOPER' ];
+    let statuses = [ 'NGONTOLZ' , 'PENTIL DEVELOPER' , 'ZICCONTOL' ];
 
     setInterval(function() {
         let status = statuses[Math.floor(Math.random()*statuses.length)];

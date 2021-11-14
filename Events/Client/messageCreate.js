@@ -22,7 +22,7 @@ module.exports = async function(client, message) {
     if (message.content.match(new RegExp(`^<@!?${message.client.user.id}>( |)$`))) {
       
       const ngentot = new Discord.MessageEmbed()
-        .setDescription(`Hello **${message.author.tag}**, my prefix is **${PREFIX}**.\nUse **${PREFIX}help** to get the list of the commands!`) 
+        .setDescription(`Hello **${message.author.tag}**, my prefix is **${PREFIX}**\nUse **${PREFIX}help** to get the list of the commands!`) 
       return message.channel.send({embeds: [ngentot]});
     }
 

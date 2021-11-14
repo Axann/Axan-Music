@@ -62,7 +62,7 @@ client.noVC = audit.noVC;
 client.sameVC = audit.sameVC;
 client.noMUSIC = audit.audnoMUSIC;
 
-client.suksesONautoplay = audit.suksesONAUTOPLAY;
+client.suksesONautoplay = audit.suksesONautoplay;
 client.suksesOFFautoplay = audit.suksesOFFautoplay;
 
 
