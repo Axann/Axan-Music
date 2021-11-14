@@ -1,1 +1,0 @@
-module.exports.mustVC = () => { "<:N_:848429469688397854> ・ You must be in a voice channel!" }

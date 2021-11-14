@@ -7,6 +7,8 @@ const config = require("./config.json");
 const DisTube = require('distube');
 const { SpotifyPlugin } = require("@distube/spotify");
 
+const audit = require("./audit.json");
+
 
 // ─────────────────────────────────── || CLIENT JAOK REVISI TEROS || ─────────────────────────────────── //
 
@@ -53,6 +55,9 @@ client.prefix = config.Prefix;
 client.owner = config.OwnerId;
 client.color = config.Color;
 client.musicimg = config.MusicImg;
+
+
+client.mustVC = audit.mustVC;
 
 
 // ─────────────────────────────────── || PENGTIL NGACENG || ─────────────────────────────────── //
