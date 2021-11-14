@@ -1,4 +1,14 @@
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js")
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
+
 module.exports = {
+
     name: "search",
     category: "Music",
     aliases: [],
@@ -9,13 +19,38 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+  
+  
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+  
+
     async execute(client, message, args) {
+      
+      
+// ─────────────────────────────────── || EROR || ─────────────────────────────────── //
+
+      
+       const embedgagal = new Discord.MessageEmbed()
+            .setColor('RED')
+       
+       
+        // must vc
+        
         const memberVC = message.member.voice.channel;
-        if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
+        if (!memberVC) {
+            embedgagal.setDescription(`${message.client.mustVC}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
+        // no vc
+      
         const clientVC = message.guild.me.voice.channel;
-        if (clientVC && clientVC !== memberVC) return message.channel.send(`❌ | You must be in the same channel as ${message.client.user}!`);
+        if (!clientVC) {
+            embedgagal.setDescription(`${message.client.noVC}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
+      
         message.client.distube.search(args.join(' '), {
             limit: 10,
             type: "video",

@@ -48,7 +48,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
             .setColor(color)
             .setAuthor(`Queue: [${arrays.length} Songs]`)
-            .setFooter(`Request by ${message.author.tag} • ${message.client.footer.status(queue)}`, message.author.displayAvatarURL());
+            //.setFooter(`Request by ${message.author.tag} • ${message.client.footer.status(queue)}`, message.author.displayAvatarURL());
 
         message.client.pagination.button(message, arrays, embed)
       

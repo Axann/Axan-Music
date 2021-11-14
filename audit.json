@@ -27,5 +27,8 @@
     "errorPREVIOUS" : "<:N_:848429469688397854> ・ Play **previous** song.",
     "suksesPREVIOUS" : "<:Y_:848429615323021354> ・ An error occurred while play previous song.",
   
+    "errorRESUME" : "<:N_:848429469688397854> ・ The queue has been played.",
+    "suksesRESUME" : "<:Y_:848429615323021354> ・ Successfully **Resumed** a song.",
+  
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }

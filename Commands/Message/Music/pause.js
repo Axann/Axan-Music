@@ -78,5 +78,9 @@ module.exports = {
         message.client.distube.pause(message);
             embedsukses.setDescription(`${message.client.suksesPAUSE}`);
         message.channel.send({ embeds: [embedsukses] });
+      
+      
     }
+  
+  
 }

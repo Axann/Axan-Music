@@ -21,36 +21,67 @@ module.exports = {
     owner: false,
   
   
-// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
   
   
-    async execute(client, message, args) {
+    async execute(client, message, args, color) {
       
       
+// ─────────────────────────────────── || EROR || ─────────────────────────────────── //
+      
+      
+      const embedgagal = new Discord.MessageEmbed()
+            .setColor('RED')
+      
+      
+      //mustVC
         const memberVC = message.member.voice.channel;
-        if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
+        if (!memberVC) {
+            embedgagal.setDescription(`${message.client.mustVC}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        } 
 
+      
+      //noVC
         const clientVC = message.guild.me.voice.channel;
-        if (!clientVC) return message.channel.send(`❌ | I'm not on any voice channel!`);
+        if (!clientVC) {
+            embedgagal.setDescription(`${message.client.noVC}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
-        if (memberVC !== clientVC) return message.channel.send(`❌ | You must be in the same channel as ${message.client.user}!`);
+      
+        // same vc
+        if (memberVC !== clientVC) {
+            embedgagal.setDescription(`${message.client.sameVC}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
+      
+        // noMUSIC
         const queue = message.client.distube.getQueue(message);
-        if (!queue) return message.channel.send(`❌ | There is no music playing!`);
+        if (!queue){
+            embedgagal.setDescription(`${message.client.noMUSIC}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        };
 
-        const embed = new MessageEmbed()
-            .setColor(message.client.color)
-            .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
+      
+// ─────────────────────────────────── || SUKSES || ─────────────────────────────────── //
 
-        const embederror = new MessageEmbed()
-            .setColor("#ff0000");
 
-        if (!queue.paused) return message.channel.send(`❌ | The queue has been played.`);
-		
-		message.client.distube.resume(message);
+        const embedsukses = new Discord.MessageEmbed()
+            .setColor(color)
 
-		embed.setDescription(`▶️ | Successfully **Resumed** a song.`);
-		message.channel.send({ embeds: [embed] });
-		
+        if (queue.paused){
+            embedgagal.setDescription(`${message.client.errorPAUSE}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        };
+      
+        message.client.distube.resume(message);
+            embedsukses.setDescription(`${message.client.suksesPAUSE}`);
+        message.channel.send({ embeds: [embedsukses] });
+      
+      
     }
+  
+  
 }
