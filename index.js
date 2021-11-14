@@ -85,6 +85,9 @@ client.suksesPAUSE = audit.suksesPAUSE;
 client.errorRESUME = audit.errorRESUME;
 client.suksesRESUME = audit.suksesRESUME;
 
+client.errorSHUFFLE = audit.errorSHUFFLE;
+client.suksesSHUFFLE = audit.suksesSHUFFLE;
+
 client.errorARGS = audit.errorARGS;
 
 

@@ -30,5 +30,8 @@
     "errorRESUME" : "<:N_:848429469688397854> ・ The queue has been played.",
     "suksesRESUME" : "<:Y_:848429615323021354> ・ Successfully **Resumed** a song.",
   
+    "errorSHUFFLE" : "<:N_:848429469688397854> ・ An error occurred while shuffle  the queue",
+    "suksesSHUFFLE" : "<:Y_:848429615323021354> ・ Successfully **Shuffled** the queue.",
+  
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }

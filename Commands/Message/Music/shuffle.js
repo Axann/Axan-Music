@@ -60,7 +60,7 @@ module.exports = {
       
         const queue = message.client.distube.getQueue(message);
         if (!queue){
-            embedgagal.setDescription(`${message.client.noMUSIC}`)
+            embedgagal.setDescription(`${message.client.noMUSIC}`);
             return message.channel.send({ embeds: [embedgagal] });
         };
 
@@ -73,12 +73,17 @@ module.exports = {
 
         message.client.distube.shuffle(message)
             .then(queue => {
-                embed.setDescription(`🔀 | Successfully **Shuffled** the queue.`);
-                message.channel.send({ embeds: [embed] });
+                embedsukses.setDescription(`${message.client.errorSHUFFLE}`)
+                message.channel.send({ embeds: [embedsukses] });
             })
+      
             .catch(error => {
-                return message.channel.send("❌ | An error occurred while shuffle  the queue."); 
+                embedsukses.setDescription(`${message.client.errorSHUFFLE}`)
+                return message.channel.send({ embeds: [embedsukses] });
             });
         
+      
     }
+  
+  
 }
