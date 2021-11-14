@@ -24,5 +24,8 @@
     "errorPAUSE" : "<:N_:848429469688397854> ・ The queue has been paused.",
     "suksesPAUSE" : "<:Y_:848429615323021354> ・ Successfully **Paused** a song.",
   
+    "errorPREVIOUS" : "<:N_:848429469688397854> ・ Play **previous** song.",
+    "suksesPREVIOUS" : "<:Y_:848429615323021354> ・ An error occurred while play previous song.",
+  
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }

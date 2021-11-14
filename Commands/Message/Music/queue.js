@@ -1,5 +1,11 @@
-/* eslint-disable no-unused-vars */
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const { MessageEmbed , Discord } = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "queue",
@@ -12,12 +18,32 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-    async execute(client, message, args) {
+  
+  
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+  
+    async execute(client, message, args, color) {
+      
+      
+// ─────────────────────────────────── || EROR || ─────────────────────────────────── //
+      
+      
+        const embedgagal = new Discord.MessageEmbed()
+             .setColor('RED')
+      
         const queue = message.client.distube.getQueue(message);
-        if (!queue) return message.channel.send(`❌ | There is no music playing!`);
+      
+        if (!queue){
+          
+          
+        } 
 
+      
+      
         let arrays = queue.songs.map((song, id) => `**${id + 1}**. [${song.name}](${song.url}) - \`${song.formattedDuration}\``);
 
+      
+      
         let embed = new MessageEmbed()
             .setColor(message.client.color)
             .setAuthor(`Queue: [${arrays.length} Songs]`)
