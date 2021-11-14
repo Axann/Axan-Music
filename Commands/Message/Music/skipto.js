@@ -74,17 +74,21 @@ module.exports = {
       
         if (isNaN(target)) {
             embedgagal.setDescription(`${message.client.sameVC}`);
-            return message.channel.send(`❌ | Please enter a valid number!`);
+            return message.channel.send(`<:N_:848429469688397854> ・ Please enter a valid number!`);
         }
-      return message.channel.send(`❌ | Please enter a valid number!`)
 
         message.client.distube.jump(message, parseInt(args[0]))
-            .then(queue => {
-                embed.setDescription(`⏩ | Successfully **Skipped** ${args[0]} songs.`);
-                message.channel.send({ embeds: [embed] });
-            })
-            .catch(error => {
-                return message.channel.send("❌ | An error occurred while skip the song."); 
-            });
+        .then(queue => {
+            embedsukses.setDescription(`<:Y_:848429615323021354> ・ Successfully **Skipped** ${args[0]} songs.`);
+            message.channel.send({ embeds: [embedsukses] });
+        })
+        .catch(error => {
+            embedgagal.setDescription(`${message.client.sameVC}`);
+            return message.channel.send(`<:N_:848429469688397854> ・ An error occurred while skip the song.`); 
+        })
+      
+      
     }
+  
+  
 }
