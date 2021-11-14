@@ -11,7 +11,7 @@ module.exports = {
     name: "leave",
     category: "Music",
     aliases: [ "dc" ],
-    description: "Leave Voice Channel",
+    description: "Leave from u",
     args: false,
     usage: [],
     examples: [],

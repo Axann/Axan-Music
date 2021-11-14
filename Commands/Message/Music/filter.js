@@ -11,8 +11,8 @@ module.exports = {
   
     name: "filter",
     category: "Music",
-    aliases: [ "eq", "equalizer" ],
-    description: "Audio Filters",
+    aliases: [ "f" ],
+    description: "Filtering ur music",
     args: false,
     usage: [ "<3d, bassboost, echo, karaoke, nightcore, vaporwave>", "off" ],
     examples: [ "bassboost", "off" ],

@@ -81,12 +81,12 @@ module.exports = {
 
           
           
-            embed.setTitle(`${message.client.prefix}${name}`)
+            //embed.setTitle(`${message.client.prefix}${name}`)
             embed.setDescription(`\`\`\`${description}\`\`\``)
             embed.addField('Usage', `${usage}`)
-            embed.addField('Examples', `${example}`)
-            embed.addField('Aliases', `__***${aliases}***__`)
-            embed.addField('Member Permission', `\`${memberPermissions}\``);
+            //embed.addField('Examples', `${example}`)
+            embed.addField('Aliases', `${aliases}`)
+            //embed.addField('Member Permission', `\`${memberPermissions}\``);
             message.channel.send({ embeds: [embed] });
         }
     }

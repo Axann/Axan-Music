@@ -14,12 +14,12 @@ module.exports = async (client) => {
 // ─────────────────────────────────── || ACTIVITY || ─────────────────────────────────── //
 
 
-    let statuses = [ 'NGONTOLZ' , 'PENTIL DEVELOPER' , 'ZICCONTOL' ];
+    let statuses = [ 'Mention Me!' , 'how to make a bot?' , 'ahsan & zicc developer' ];
 
     setInterval(function() {
         let status = statuses[Math.floor(Math.random()*statuses.length)];
         client.user.setActivity(status, {type: "LISTENING"});
-    }, 10000)
+    }, 2000)
 
 
 }
