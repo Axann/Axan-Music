@@ -11,7 +11,7 @@ const lyricsFinder = require("lyrics-finder");
 module.exports = {
     name: "lyrics",
     category: "Music",
-    aliases: [ "ly" ],
+    aliases: [ "ly", "lyric" ],
     description: "Show Lyric a song",
     args: false,
     usage: [],
@@ -33,11 +33,13 @@ module.exports = {
         const queue = message.client.distube.getQueue(message);
 
         let song = args.join(" ");
-        let currentSong = queue.songs[0];
+        //let currentSong = queue.songs[0];
 
-        if (!song && currentSong) song = currentSong.name;
+        //if (!song && currentSong) song = currentSong.name;
 
-        if (!song && !currentSong) {
+        //if (!song && !currentSong) {
+
+        if (!song) {
             embedgagal.setDescription(`${message.client.errorLYRIC1}`);
             return message.channel.send({ embeds: [embedgagal] });
         }
@@ -55,10 +57,8 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setTitle(`${song}`)
-                .setThumbnail(client.user.displayAvatarURL())
                 .setColor(color)
                 .setDescription(split.join(""))
-                .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
             message.channel.send({ embeds: [embed] });
         }
       
