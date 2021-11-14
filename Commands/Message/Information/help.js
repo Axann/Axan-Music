@@ -33,7 +33,7 @@ module.exports = {
             const commands = (category) => {
                 return message.client.commands.filter(cmd => cmd.category === category).map(cmd => `\`${cmd.name}\``).join(", ");
             }
-            
+
             embed.setTitle(`COMMAND LIST`)
             embed.setDescription(`Help on a specific command type \`${message.client.prefix}help <command>\``);
             embed.addField('MUSIC' , '```yaml\nautoplay , filter , join , leave , loop , lyrics , nowplaying , pause , play , previous , queue , resume , search , shuffle , skip , skipto , stop , volume```')
