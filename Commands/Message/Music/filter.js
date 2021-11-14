@@ -66,18 +66,7 @@ module.exports = {
             return message.channel.send({ embeds: [embedgagal] });
         };
 
-      
-// ─────────────────────────────────── || SUKSES || ─────────────────────────────────── //
-      
-      
-        const embed = new Discord.MessageEmbed()
-            .setColor(color)
-            .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
 
-        const embederror = new Discord.MessageEmbed()
-            .setColor(color);
-
-      
 // ─────────────────────────────────── || FILTER || ─────────────────────────────────── //
 
 
@@ -85,28 +74,34 @@ module.exports = {
 
         const input = args[0];
         if (!input) {
-            embederror.setDescription(`❌ | You didn't provide any arguments!
-Examples: ${message.client.prefix}filter bassboost
-Valid Filter: ${filter.join(", ")}
-Turn OFF Filter: ${message.client.prefix}filter off`);
-            message.channel.send({ embeds: [embederror] });
+            
+            embedgagal.setDescription(`<:N_:848429469688397854> ・ What kind a filter do you want?
+                                       \n Examples: ${message.client.prefix}filter bassboost
+                                       \n Valid Filter: ${filter.join(", ")}
+                                       \n Turn OFF Filter: ${message.client.prefix}filter off`);
+          
+            message.channel.send({ embeds: [embedgagal] });
         }
 
+// ─────────────────────────────────── || SUKSES & GAGAL || ─────────────────────────────────── //
+
+
+        const embedsukses = new Discord.MessageEmbed()
+            .setColor(color)
+        
         if (filter.includes(input)) {
             message.client.distube.setFilter(message, input, true);
 
-            embed.setDescription(`🎛️ | Current queue filter: ${input}.`);
-            message.channel.send({ embeds: [embed] });
+            embedsukses.setDescription(`🎛️ | Current queue filter: ${input}.`);
+            message.channel.send({ embeds: [embedsukses] });
         } else if (input === "off") {
             message.client.distube.setFilter(message, false, true);
 
-            embed.setDescription(`🎛️ | Disable queue filter.`);
-            message.channel.send({ embeds: [embed] });
+            embedsukses.setDescription(`🎛️ | Disable queue filter.`);
+            message.channel.send({ embeds: [embedsukses] });
         } else {
-            embederror.setDescription(`❌ | Please enter valid arguments!
-Valid Filter: ${filter.join(", ")}
-Turn OFF Filter: ${message.client.prefix}filter off`);
-            message.channel.send({ embeds: [embederror] });
+            embedgagal.setDescription(``);
+            message.channel.send({ embeds: [embedgagal] });
         }
       
       

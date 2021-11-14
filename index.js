@@ -65,6 +65,8 @@ client.noMUSIC = audit.audnoMUSIC;
 client.suksesONautoplay = audit.suksesONautoplay;
 client.suksesOFFautoplay = audit.suksesOFFautoplay;
 
+client.errorARGS = audit.errorARGS;
+
 
 // ─────────────────────────────────── || PENGTIL NGACENG || ─────────────────────────────────── //
 
