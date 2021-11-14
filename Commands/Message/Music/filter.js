@@ -73,12 +73,7 @@ module.exports = {
         let filter = ['3d', 'bassboost', 'echo', 'flanger', 'gate', 'haas', 'karaoke', 'nightcore', 'reverse', 'vaporwave', 'mcompand', 'phaser', 'tremolo', 'surround', 'earwax'];
 
         const input = args[0];
-        if (!input) {
         
-            embedgagal.setDescription(`**Examples**\`\`\`yaml\n${message.client.prefix}filter bassboost\`\`\`\n **Valid Filter**\`\`\`yaml\n${filter.join(", ")}\`\`\`\n **Turn OFF Filter**\`\`\`yaml\n${message.client.prefix}filter off\`\`\`\n`)
-          
-            message.channel.send({ embeds: [embedgagal] });
-        }
 
 // ─────────────────────────────────── || SUKSES & GAGAL || ─────────────────────────────────── //
 
@@ -97,7 +92,7 @@ module.exports = {
         } 
 
         // off
-      
+
         else if (input === "off") {
             message.client.distube.setFilter(message, false, true);
 
@@ -108,7 +103,9 @@ module.exports = {
         // gagal
       
         else {
-            embedgagal.setDescription(`${message.client.errorARGS}`);
+        
+            embedgagal.setDescription(`**Valid Filter**\`\`\`yaml\n${filter.join(", ")}\`\`\`\n **Turn OFF**\`\`\`yaml\n${message.client.prefix}filter off\`\`\`\n`)
+          
             message.channel.send({ embeds: [embedgagal] });
         }
       
