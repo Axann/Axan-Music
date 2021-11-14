@@ -37,27 +37,31 @@ module.exports = {
       
       
         if (!memberVC){
-          embedgagal .setDescription('<:N_:848429469688397854> ・ You must be in a voice channel!')
+          embedgagal .setDescription(message.client.mustVC)
           return message.channel.send({ embeds: [embedgagal] });
         } 
 
         const clientVC = message.guild.me.voice.channel;
         if (!clientVC){
-          embedgagal .setDescription('<:N_:848429469688397854> ・ Im not on any voice channel!')
+          embedgagal .setDescription(message.client.sameVC)
           return message.channel.send({ embeds: [embedgagal] });
         } 
 
-        if (memberVC !== clientVC) return message.channel.send(`<:N_:848429469688397854> ・ You must be in the same channel as ${message.client.user}!`);
+        if (memberVC !== clientVC) return message.channel.send(message.client.sameVC);
 
         const queue = message.client.distube.getQueue(message);
-        if (!queue) return message.channel.send(`<:N_:848429469688397854> ・ There is no music playing!`);
+        if (!queue) return message.channel.send(message.client.noMUSIC);
 
         const embed = new Discord.MessageEmbed()
-            .setColor(message.client.color)
+            .setColor(color)
             .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
 
         const embederror = new Discord.MessageEmbed()
-            .setColor("#ff0000");
+            .setColor(color);
+
+      
+// ─────────────────────────────────── || FILTER || ─────────────────────────────────── //
+
 
         let filter = ['3d', 'bassboost', 'echo', 'flanger', 'gate', 'haas', 'karaoke', 'nightcore', 'reverse', 'vaporwave', 'mcompand', 'phaser', 'tremolo', 'surround', 'earwax'];
 
@@ -86,5 +90,9 @@ Valid Filter: ${filter.join(", ")}
 Turn OFF Filter: ${message.client.prefix}filter off`);
             message.channel.send({ embeds: [embederror] });
         }
+      
+      
     }
+  
+  
 }

@@ -61,7 +61,9 @@ client.mustVC = audit.mustVC;
 client.noVC = audit.noVC;
 client.sameVC = audit.sameVC;
 client.noMUSIC = audit.audnoMUSIC;
-client.suksesAUTOPLAY = audit.suksesAUTOPLAY;
+
+client.suksesONautoplay = audit.suksesONAUTOPLAY;
+client.suksesOFFautoplay = audit.suksesOFFautoplay;
 
 
 // ─────────────────────────────────── || PENGTIL NGACENG || ─────────────────────────────────── //

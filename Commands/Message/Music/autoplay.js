@@ -67,12 +67,12 @@ module.exports = {
         if (!queue.autoplay) {
             message.client.distube.toggleAutoplay(message);
 
-            embed.setDescription('<:Y_:848429615323021354> ・ Successfully activated **autoplay** mode.');
+            embed.setDescription(message.client.suksesONautoplay);
             message.channel.send({ embeds: [embed] });
         } else {
             message.client.distube.toggleAutoplay(message);
 
-            embed.setDescription('<:Y_:848429615323021354> ・ Successfully deactivated **autoplay** mode.');
+            embed.setDescription(message.client.suksesOFFautoplay);
             message.channel.send({ embeds: [embed] });
         }
 

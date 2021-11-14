@@ -4,5 +4,6 @@
     "sameVC" : "<:N_:848429469688397854> | You must be in the same channel as ${message.client.user}!",
     "noMUSIC" : "<:N_:848429469688397854> ・ There is no music playing!",
   
-    "suksesAUTOPLAY" : "<:Y_:848429615323021354> ・ Successfully activated **autoplay** mode."
+    "suksesONautoplay" : "<:Y_:848429615323021354> ・ Successfully activated **autoplay** mode.",
+    "suksesOFFautoplay" : "<:Y_:848429615323021354> ・ Successfully deactivated **autoplay** mode."
 }

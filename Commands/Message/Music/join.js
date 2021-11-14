@@ -1,5 +1,11 @@
-/* eslint-disable no-unused-vars */
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "join",
@@ -12,6 +18,11 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
     async execute(client, message, args) {
 
 		const memberVC = message.member.voice.channel;
