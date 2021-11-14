@@ -12,7 +12,7 @@ module.exports = {
     category: 'owner',
     aliases: [],
     description: 'Restart bot',
-    args: true,
+    args: false,
     usage: [],
     examples: ['restart.'],
     memberPermissions: [],

@@ -72,14 +72,17 @@ module.exports = {
 
         
         message.client.distube.previous(message)
-            .then(song => {
-                embedsukses.setDescription(`${message.client.suksesPREVIOUS}`);
-                message.channel.send({ embeds: [embedsukses] });
-            })
-            .catch(error => {
-                embedsukses.setDescription(`${message.client.suksesPREVIOUS}`);
-                message.channel.send({ embeds: [embedsukses] });
-            })
+        .then(song => {
+            embedsukses.setDescription(`${message.client.suksesPREVIOUS}`);
+            message.channel.send({ embeds: [embedsukses] });
+        })
+        .catch(error => {
+            embedgagal.setDescription(`${message.client.errorPREVIOUS}`);
+            return message.channel.send({ embeds: [embedgagal] });
+        })
 
+      
     }
+  
+  
 }

@@ -1,7 +1,14 @@
-/* eslint-disable no-unused-vars */
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const { MessageEmbed , Discord } = require("discord.js");
+
+
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
 
 module.exports = {
+  
     name: "resume",
     category: "Music",
     aliases: [],
@@ -12,7 +19,14 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+  
+  
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+  
+  
     async execute(client, message, args) {
+      
+      
         const memberVC = message.member.voice.channel;
         if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
 
