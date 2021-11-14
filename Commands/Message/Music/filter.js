@@ -1,6 +1,14 @@
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
+
 const { MessageEmbed } = require("discord.js");
 
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
+
 module.exports = {
+  
     name: "filter",
     category: "Music",
     aliases: [ "eq", "equalizer" ],
@@ -11,9 +19,20 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-    async execute(client, message, args) {
+    async execute(client, message, args, color) {
+      
+      
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+      
+      
+      const emdebgagal = new MessageEmbed()
+                 .setColor(color)
+      
         const memberVC = message.member.voice.channel;
-        if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
+        if (!memberVC){
+          
+          return message.channel.send(`❌ | You must be in a voice channel!`);
+        } 
 
         const clientVC = message.guild.me.voice.channel;
         if (!clientVC) return message.channel.send(`❌ | I'm not on any voice channel!`);

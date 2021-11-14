@@ -1,10 +1,11 @@
-// ─────────────────────────────────── || MODULE NGENTOT || ─────────────────────────────────── //
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
 
 
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 
 
-// ─────────────────────────────────── || EXPORT IMPORT || ─────────────────────────────────── //
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
   
@@ -18,12 +19,21 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
   
   
-    async execute(client, message, args) {
-        const embed = new MessageEmbed()
-            .setColor(message.client.color)
-            .setDescription(`Punyamu Pink bang? : **${message.client.ws.ping}**ms`);
+    async execute(client, message, args, color) {
+      
+      
+        const embed = new Discord.MessageEmbed()
+            .setColor(color)
+            .setDescription(`**${message.client.ws.ping}**ms`);
         message.channel.send({ embeds: [embed] });
+      
+      
     }
+  
+  
 }

@@ -1,4 +1,4 @@
-// ─────────────────────────────────── || MODULE NGENTOT || ─────────────────────────────────── //
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
 
 
 const { MessageEmbed } = require("discord.js");
@@ -19,19 +19,21 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-    async execute(client, message, args, color) {
       
       
 // ─────────────────────────────────── || MISAL GAK NAK VC || ─────────────────────────────────── //
 
-
-      const embedgagal = new MessageEmbed()
+  
+    async execute(client, message, args, color) {
+      
+      
+        const embedgagal = new MessageEmbed()
               .setColor(color)
       
         const memberVC = message.member.voice.channel;
       
         if (!memberVC) {
-          embedgagal.setDescription(`❌ | You must be in a voice channel!`)
+          embedgagal.setDescription(`<:N_:848429469688397854> | You must be in a voice channel!`)
           return message.channel.send({ embeds: [embedgagal] });
         } 
 

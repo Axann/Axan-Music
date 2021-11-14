@@ -50,6 +50,3 @@ module.exports = {
 
 
 }
-
-
-// **・ Distube** : v${message.client.distube.version}
