@@ -43,10 +43,10 @@ module.exports = {
         // no vc
       
         const clientVC = message.guild.me.voice.channel;
-        if (clientVC && clientVC === memberVC) {
-            embedgagal.setDescription(`${message.client.noVC}`);
-            return message.channel.send({ embeds: [embedgagal] });
-        }
+        //if (clientVC && clientVC === memberVC) {
+        //    embedgagal.setDescription(`${message.client.noVC}`);
+        //    return message.channel.send({ embeds: [embedgagal] });
+        //}
       
         // same vc
       

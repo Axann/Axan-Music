@@ -79,6 +79,9 @@ client.errorLYRIC1 = audit.errorLYRIC1;
 client.errorLYRIC2 = audit.errorLYRIC2;
 client.errorLYRIC3 = audit.errorLYRIC3;
 
+client.errorPAUSE = audit.errorPAUSE;
+client.suksesPAUSE = audit.suksesPAUSE;
+
 client.errorARGS = audit.errorARGS;
 
 

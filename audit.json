@@ -21,5 +21,8 @@
     "errorLYRIC2" : "<:N_:848429469688397854> ・ No lyrics found!",
     "errorLYRIC3" : "<:N_:848429469688397854> ・ An error occurred while searching for song lyrics.",
   
+    "errorPAUSE" : "<:N_:848429469688397854> ・ The queue has been paused.",
+    "suksesPAUSE" : "<:Y_:848429615323021354> ・ Successfully **Paused** a song.",
+  
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }

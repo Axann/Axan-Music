@@ -56,7 +56,7 @@ module.exports = {
 
 
             const embed = new Discord.MessageEmbed()
-                .setTitle(`${song}`)
+                //.setTitle(`${song}`)
                 .setColor(color)
                 .setDescription(split.join(""))
             message.channel.send({ embeds: [embed] });
