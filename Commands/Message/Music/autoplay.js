@@ -27,57 +27,71 @@ module.exports = {
     async execute(client, message, args, color) {
       
       
+// ─────────────────────────────────── || GAGAL || ─────────────────────────────────── //
+
+
         const embedgagal = new Discord.MessageEmbed()
             .setColor('RED')
-      
-        const memberVC = message.member.voice.channel;
-      
-      
-// ─────────────────────────────────── || GA NAK VC || ─────────────────────────────────── //
 
+        // must vc
+        
+        const memberVC = message.member.voice.channel;
 
         if (!memberVC) {
-          embedgagal.setDescription(message.client.mustVC)
-          return message.channel.send({ embeds: [embedgagal] });
+            embedgagal.setDescription(message.client.mustVC)
+            return message.channel.send({ embeds: [embedgagal] });
         } 
 
+        // no vc
+      
         const clientVC = message.guild.me.voice.channel;
       
         if (!clientVC) {
-          embedgagal.setDescription(message.client.noVC)
-          return message.channel.send({ embeds: [embedgagal] });
+            embedgagal.setDescription(message.client.noVC)
+            return message.channel.send({ embeds: [embedgagal] });
         }
 
-        if (memberVC !== clientVC) return message.channel.send(message.client.sameVC);
+        // same vc
+      
+        if (memberVC !== clientVC) {
+            return message.channel.send(message.client.sameVC);
+        }
 
+        // queue
+      
         const queue = message.client.distube.getQueue(message);
       
         if (!queue){
-          embedgagal.setDescription(message.client.sameVC)
-          return message.channel.send({ embeds: [embedgagal] });
+            embedgagal.setDescription(message.client.noMUSIC)
+            return message.channel.send({ embeds: [embedgagal] });
         };
 
       
-// ─────────────────────────────────── || MISAL SUKSES || ─────────────────────────────────── //
+// ─────────────────────────────────── || SUKSES || ─────────────────────────────────── //
 
 
-        const embed = new Discord.MessageEmbed()
-                .setColor(color)
+        const embedsukses = new Discord.MessageEmbed()
+            .setColor(color)
 
+        // on
+        
         if (!queue.autoplay) {
             message.client.distube.toggleAutoplay(message);
 
-            embed.setDescription(message.client.suksesONautoplay);
-            message.channel.send({ embeds: [embed] });
+            embedsukses.setDescription(message.client.suksesONautoplay);
+            message.channel.send({ embeds: [embedsukses] });
+          
+        // off
+          
         } else {
             message.client.distube.toggleAutoplay(message);
 
-            embed.setDescription(message.client.suksesOFFautoplay);
-            message.channel.send({ embeds: [embed] });
+            embedsukses.setDescription(message.client.suksesOFFautoplay);
+            message.channel.send({ embeds: [embedsukses] });
         }
 
-      
-        }
-  
-  
+
+    }
+
+
 }

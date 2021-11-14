@@ -27,31 +27,49 @@ module.exports = {
     async execute(client, message, args, color) {
 
 
+// ─────────────────────────────────── || GAGAL || ─────────────────────────────────── //
+
+
         const embedgagal = new Discord.MessageEmbed()
-            .setColor(color)
-      
+            .setColor('RED')
+
+        // must vc
+        
         const memberVC = message.member.voice.channel;
-      
-      
-// ─────────────────────────────────── || GA NAK VC || ─────────────────────────────────── //
-      
-      
-        if (!memberVC){
-          embedgagal .setDescription(message.client.mustVC)
-          return message.channel.send({ embeds: [embedgagal] });
+
+        if (!memberVC) {
+            embedgagal.setDescription(message.client.mustVC)
+            return message.channel.send({ embeds: [embedgagal] });
         } 
 
+        // no vc
+      
         const clientVC = message.guild.me.voice.channel;
-        if (!clientVC){
-          embedgagal .setDescription(message.client.sameVC)
-          return message.channel.send({ embeds: [embedgagal] });
-        } 
+      
+        if (!clientVC) {
+            embedgagal.setDescription(message.client.noVC)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
-        if (memberVC !== clientVC) return message.channel.send(message.client.sameVC);
+        // same vc
+      
+        if (memberVC !== clientVC) {
+            return message.channel.send(message.client.sameVC);
+        }
 
+        // queue
+      
         const queue = message.client.distube.getQueue(message);
-        if (!queue) return message.channel.send(message.client.noMUSIC);
+      
+        if (!queue){
+            embedgagal.setDescription(message.client.noMUSIC)
+            return message.channel.send({ embeds: [embedgagal] });
+        };
 
+      
+// ─────────────────────────────────── || SUKSES || ─────────────────────────────────── //
+      
+      
         const embed = new Discord.MessageEmbed()
             .setColor(color)
             .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
