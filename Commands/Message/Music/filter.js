@@ -83,7 +83,7 @@ module.exports = {
 
         if (filter.includes(input)) {
             message.client.distube.setFilter(message, input, true);
-            embedsukses.setDescription(`<:Y_:848429615323021354> ・ Current queue filter: ${input}.`);
+            embedsukses.setDescription(`<:Y_:848429615323021354> ・ Current queue filter : **${input}**.`);
             message.channel.send({ embeds: [embedsukses] });
         } 
 
