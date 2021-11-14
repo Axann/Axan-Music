@@ -36,7 +36,10 @@ module.exports = {
             
             embed.setTitle(`COMMAND LIST`)
             embed.setDescription(`Help on a specific command type \`${message.client.prefix}help <command>\`!\n\n`);
-            embed.addField('MUSIC' , '```autoplay , filter , join , leave , loop , lyrics , nowplaying , pause , play , previous , queue , resume , search , shuffle , skip , skip')
+            embed.addField('MUSIC' , '```autoplay , filter , join , leave , loop , lyrics , nowplaying , pause , play , previous , queue , resume , search , shuffle , skip , skipto , stop , volume.```')
+            embed.addField('OTHER' , '```help , ping , status.```')
+            embed.setFooter('ahsan & zicc developer')
+            embed.setTimestamp()
             message.channel.send({ embeds: [embed] });
           
         } else {
