@@ -104,16 +104,17 @@ module.exports = {
         else if (input === "off") {
         message.client.distube.setRepeatMode(message, disable);
             embedsukses.setDescription(`${message.client.suksesLOOPSTOP}`)
-        message.channel.send({ embeds: [embed] });
+        message.channel.send({ embeds: [embedsukses] });
         } 
       
+        // gagal
       
-      else {
-            embederror.setDescription(`❌ | Please enter valid arguments!
+        else {
+            embedgagal.setDescription(`❌ | Please enter valid arguments!
 Loop Song: ${message.client.prefix}loop song
 Loop Queue: ${message.client.prefix}loop queue
 Turn OFF Loop: ${message.client.prefix}loop loop`);
-            message.channel.send({ embeds: [embederror] });
+            message.channel.send({ embeds: [embedgagal] });
         }
     }
 }

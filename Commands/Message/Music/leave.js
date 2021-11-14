@@ -68,13 +68,13 @@ module.exports = {
         if (queue) {
             message.client.distube.stop(message);
             message.client.distube.voices.leave(message.guild);
-                embedsukses.setDescription(`${message.client.suksesLEAVE}`);
+                embedsukses.setDescription(`${message.client.suksesLEAVE}`)
             message.channel.send({ embeds: [embedsukses] });
         }
       
         else {
             message.client.distube.voices.leave(message.guild);
-                embedsukses.setDescription(`${message.client.suksesLEAVE}`);
+                embedsukses.setDescription(`${message.client.suksesLEAVE}`)
             message.channel.send({ embeds: [embedsukses] });
         }
 
