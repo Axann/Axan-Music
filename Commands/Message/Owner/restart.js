@@ -14,7 +14,7 @@ module.exports = {
     description: 'Restart bot',
     args: false,
     usage: [],
-    examples: ['restart.'],
+    examples: ['restart'],
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: true,
