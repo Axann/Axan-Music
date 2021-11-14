@@ -8,7 +8,7 @@ module.exports = {
         const forwardId = "forward";
         const backButton = new MessageButton()
             .setStyle("SECONDARY")
-            .setLabel("Back")
+            setLabel("Back")
             .setEmoji("⏪")
             .setCustomId(backId);
         const forwardButton = new MessageButton()
