@@ -9,20 +9,22 @@ const { post } = require("node-superfetch");
 
 
 module.exports = {
-    name: "eval",
-    category: "owner",
+    name: 'eval',
+    category: 'owner',
     aliases: [],
-    description: "Eval Code",
+    description: 'eval code',
     args: true,
     usage: [],
     examples: [],
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: true,
+
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
     async execute(client, message, args, color) {
-
-
-// ─────────────────────────────────── || LEK URIP || ─────────────────────────────────── //
 
 
       const embed = new Discord.MessageEmbed()
@@ -67,14 +69,22 @@ module.exports = {
 
             message.channel.send({ embeds: [embed] });
         }
+
+
     }
+
+
 }
 
-function clean(string) {
-    if (typeof text === "string") {
-        return string.replace(/`/g, "`" + String.fromCharCode(8203))
-            .replace(/@/g, "@" + String.fromCharCode(8203))
-    } else {
-        return string;
-    }
-}
+
+// ─────────────────────────────────── || STRING || ─────────────────────────────────── //
+
+
+      function clean(string) {
+          if (typeof text === "string") {
+              return string.replace(/`/g, "`" + String.fromCharCode(8203))
+                  .replace(/@/g, "@" + String.fromCharCode(8203))
+          } else {
+              return string;
+          }
+      }

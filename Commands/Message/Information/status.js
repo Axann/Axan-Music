@@ -1,9 +1,15 @@
-/* eslint-disable no-unused-vars */
-const { MessageEmbed, version } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const { Discord, version } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 const os = require('os')
 const si = require('systeminformation');
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "status",
@@ -16,10 +22,18 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
     async execute(client, message, args) {
+
+
         const duration1 = moment.duration(message.client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
         const cpu = await si.cpu();
-        const embed = new MessageEmbed()
+
+        const embed = new Discord.MessageEmbed()
             .setColor(message.client.color)
             .setThumbnail(message.client.user.displayAvatarURL())
             .setFooter(`Request by: ${message.author.tag}`, message.author.displayAvatarURL())
@@ -45,6 +59,11 @@ module.exports = {
 > **• Heap Total** : ${(process.memoryUsage().heapTotal / 1024 / 1024).toFixed(2)} Mbps
 > **• Heap Usage** : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} Mbps
 `);
+
         message.channel.send({ embeds: [embed] });
+
+
     }
+
+
 }

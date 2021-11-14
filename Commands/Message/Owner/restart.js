@@ -1,26 +1,41 @@
 // ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
 
 
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
-    name: "restart",
-    category: "owner",
+    name: 'restart',
+    category: 'owner',
     aliases: [],
-    description: "",
+    description: 'Restart bot',
     args: true,
     usage: [],
-    examples: [],
+    examples: ['restart.'],
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: true,
-    async execute(client, message, args) {
-        const embed = new MessageEmbed()
-            .setColor("BLACK")
-            .setDescription(`Restarting bot.`);
-        message.channel.send({ embeds: [embed] }).then(message => {
-            process.exit();
-        });
-		
+
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
+    async execute(client, message, args, color) {
+
+
+      const embed = new Discord.MessageEmbed()
+        .setColor(color)
+        .setDescription(`Restarting bot . . .`);
+      
+      message.channel.send({ embeds: [embed] }).then(message => {
+        process.exit();
+      });
+
+
     }
+
+
 }
