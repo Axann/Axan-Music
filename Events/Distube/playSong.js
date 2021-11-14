@@ -7,8 +7,10 @@ const Discord = require("discord.js");
 // ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
 
 
-module.exports = async (client, queue, song, color) => {
+module.exports = async (client, queue, song, message) => {
   
+  if (!message.guild) return;
+const color = message.guild.me.displayHexColor;
   
     let duration = song.duration * 1000;
 
