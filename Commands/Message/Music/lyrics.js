@@ -24,7 +24,7 @@ module.exports = {
 // ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
 
 
-    async execute(client, message, args) {
+    async execute(client, message, args, color) {
 
 
         const embedgagal = new Discord.MessageEmbed()
@@ -54,9 +54,9 @@ module.exports = {
 
 
             const embed = new Discord.MessageEmbed()
-                .setAuthor(`Lyrics`)
-                .setColor(message.client.color)
                 .setTitle(`${song}`)
+                .setThumbnail(client.user.displayAvatarURL())
+                .setColor(color)
                 .setDescription(split.join(""))
                 .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
             message.channel.send({ embeds: [embed] });
@@ -64,9 +64,12 @@ module.exports = {
       
         catch (error) {
             console.error(error)
-            embedgagal.setDescription(`${message.client.errorLYRIC3}`);
+                embedgagal.setDescription(`${message.client.errorLYRIC3}`);
             return message.channel.send({ embeds: [embedgagal] });
-        
         }
+      
+      
     }
+  
+  
 }
