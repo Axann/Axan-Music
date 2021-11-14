@@ -58,6 +58,7 @@ client.musicimg = config.MusicImg;
 
 
 client.mustVC = audit.mustVC;
+client.noVC = audit.noVC;
 
 
 // ─────────────────────────────────── || PENGTIL NGACENG || ─────────────────────────────────── //

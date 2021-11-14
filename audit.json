@@ -1,5 +1,4 @@
 {
-
-  "mustVC" : "<:N_:848429469688397854> ・ You must be in a voice channel!"
-  
+    "mustVC" : "<:N_:848429469688397854> ・ You must be in a voice channel!",
+    "noVC" : "<:N_:848429469688397854> ・ Im not on any voice channel!"
 }

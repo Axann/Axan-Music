@@ -44,7 +44,7 @@ module.exports = {
         const clientVC = message.guild.me.voice.channel;
       
         if (!clientVC) {
-          embedgagal.setDescription('<:N_:848429469688397854> ・ Im not on any voice channel!')
+          embedgagal.setDescription(message.client.noVC)
           return message.channel.send({ embeds: [embedgagal] });
         }
 
