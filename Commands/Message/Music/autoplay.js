@@ -19,7 +19,7 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-      
+
 
 // ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
 
@@ -34,8 +34,8 @@ module.exports = {
       
       
 // ─────────────────────────────────── || GA NAK VC || ─────────────────────────────────── //
-      
-      
+
+
         if (!memberVC) {
           embedgagal.setDescription(message.client.mustVC)
           return message.channel.send({ embeds: [embedgagal] });
