@@ -36,7 +36,6 @@ module.exports = {
         // must vc
         
         const memberVC = message.member.voice.channel;
-
         if (!memberVC) {
             embedgagal.setDescription(`${message.client.mustVC}`)
             return message.channel.send({ embeds: [embedgagal] });
@@ -45,7 +44,6 @@ module.exports = {
         // no vc
       
         const clientVC = message.guild.me.voice.channel;
-      
         if (!clientVC) {
             embedgagal.setDescription(`${message.client.noVC}`)
             return message.channel.send({ embeds: [embedgagal] });
@@ -60,7 +58,6 @@ module.exports = {
         // queue
       
         const queue = message.client.distube.getQueue(message);
-      
         if (!queue){
             embedgagal.setDescription(`${message.client.noMUSIC}`)
             return message.channel.send({ embeds: [embedgagal] });
@@ -77,16 +74,14 @@ module.exports = {
         
         if (!queue.autoplay) {
             message.client.distube.toggleAutoplay(message);
-
-            embedsukses.setDescription(`${message.client.suksesONautoplay);
+            embedsukses.setDescription(`${message.client.suksesONautoplay}`);
             message.channel.send({ embeds: [embedsukses] });
           
         // off
           
         } else {
             message.client.distube.toggleAutoplay(message);
-
-            embedsukses.setDescription(message.client.suksesOFFautoplay);
+            embedsukses.setDescription(`${message.client.suksesOFFautoplay}`);
             message.channel.send({ embeds: [embedsukses] });
         }
 

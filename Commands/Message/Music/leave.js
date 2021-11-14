@@ -1,5 +1,11 @@
-/* eslint-disable no-unused-vars */
-const { MessageEmbed } = require("discord.js");
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
+
+
+const Discord = require("discord.js");
+
+
+// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+
 
 module.exports = {
     name: "leave",
@@ -12,29 +18,62 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-    async execute(client, message, args) {
 
+
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
+    async execute(client, message, args, color) {
+
+
+// ─────────────────────────────────── || GAGAL || ─────────────────────────────────── //
+
+
+        const embedgagal = new Discord.MessageEmbed()
+            .setColor("RED")
+
+        // must vc
+        
         const memberVC = message.member.voice.channel;
-        if (!memberVC) return message.channel.send(`❌ | You must be in a voice channel!`);
-
+        if (!memberVC) {
+            embedgagal.setDescription(`${message.client.mustVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
+      
+        // no vc
+      
         const clientVC = message.guild.me.voice.channel;
-        if (!clientVC) return message.channel.send(`❌ | I'm not on any voice channel!`);
+        if (clientVC && clientVC === memberVC) {
+            embedgagal.setDescription(`${message.client.noVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
+      
+        // same vc
+      
+        if (clientVC && clientVC !== memberVC) {
+            embedgagal.setDescription(`${message.client.sameVC}`)
+            return message.channel.send({ embeds: [embedgagal] });
+        }
 
-        if (memberVC !== clientVC) return message.channel.send(`❌ | You must be in the same channel as ${message.client.user}!`);
 
-		const embed = new MessageEmbed()
-            .setColor(message.client.color)
-            .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
+// ─────────────────────────────────── || SUKSES & GAGAL || ─────────────────────────────────── //
+
+
+        const embedsukses = new Discord.MessageEmbed()
+            .setColor(color)
+
+        // sukses
 
         const queue = message.client.distube.getQueue(message);
-        
         if (queue) {
             message.client.distube.stop(message);
             message.client.distube.voices.leave(message.guild);
 
-            embed.setDescription(`✔️ | Successfully **Leave** the voice channel.`);
-			message.channel.send({ embeds: [embed] });
-        } else {
+                embed.setDescription(`✔️ | Successfully **Leave** the voice channel.`);
+            message.channel.send({ embeds: [embed] });
+        }
+      
+      else {
             message.client.distube.voices.leave(message.guild);
 
             embed.setDescription(`✔️ | Successfully **Leave** the voice channel.`);

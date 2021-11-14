@@ -36,33 +36,30 @@ module.exports = {
         // must vc
         
         const memberVC = message.member.voice.channel;
-
         if (!memberVC) {
-            embedgagal.setDescription(message.client.mustVC)
+            embedgagal.setDescription(`${message.client.mustVC}`)
             return message.channel.send({ embeds: [embedgagal] });
         } 
 
         // no vc
       
         const clientVC = message.guild.me.voice.channel;
-      
         if (!clientVC) {
-            embedgagal.setDescription(message.client.noVC)
+            embedgagal.setDescription(`${message.client.noVC}`)
             return message.channel.send({ embeds: [embedgagal] });
         }
 
         // same vc
       
         if (memberVC !== clientVC) {
-            return message.channel.send(message.client.sameVC);
+            return message.channel.send(`${message.client.sameVC}`)
         }
 
         // queue
       
         const queue = message.client.distube.getQueue(message);
-      
         if (!queue){
-            embedgagal.setDescription(message.client.noMUSIC)
+            embedgagal.setDescription(`${message.client.noMUSIC}`)
             return message.channel.send({ embeds: [embedgagal] });
         };
 
@@ -81,12 +78,10 @@ module.exports = {
         const embedsukses = new Discord.MessageEmbed()
             .setColor(color)
         
-        
         // on
 
         if (filter.includes(input)) {
             message.client.distube.setFilter(message, input, true);
-
             embedsukses.setDescription(`<:Y_:848429615323021354> ・ Current queue filter: ${input}.`);
             message.channel.send({ embeds: [embedsukses] });
         } 

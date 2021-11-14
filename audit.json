@@ -8,5 +8,8 @@
     "suksesONautoplay" : "<:Y_:848429615323021354> ・ Successfully activated **autoplay** mode.",
     "suksesOFFautoplay" : "<:Y_:848429615323021354> ・ Successfully deactivated **autoplay** mode.",
   
+    "errorJOIN" : "<:N_:848429469688397854> ・ An error occurred while trying to join the voice channel. Try using the **play** command!",
+    "suksesJOIN" : "<:Y_:848429615323021354> ・ Successfully **join** the voice channel.",
+  
     "errorARGS" : "<:N_:848429469688397854> ・ Please enter valid arguments!"
 }

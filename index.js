@@ -66,6 +66,9 @@ client.onVC = audit.onVC;
 client.suksesONautoplay = audit.suksesONautoplay;
 client.suksesOFFautoplay = audit.suksesOFFautoplay;
 
+client.errorJOIN = audit.errorJOIN;
+client.suksesJOIN = audit.suksesJOIN;
+
 client.errorARGS = audit.errorARGS;
 
 

@@ -35,7 +35,6 @@ module.exports = {
         // must vc
         
         const memberVC = message.member.voice.channel;
-
         if (!memberVC) {
             embedgagal.setDescription(`${message.client.mustVC}`)
             return message.channel.send({ embeds: [embedgagal] });
@@ -44,7 +43,6 @@ module.exports = {
         // on vc
       
         const clientVC = message.guild.me.voice.channel;
-      
         if (clientVC && clientVC === memberVC) {
             embedgagal.setDescription(`${message.client.onVC}`)
             return message.channel.send({ embeds: [embedgagal] });
@@ -61,19 +59,21 @@ module.exports = {
 // ─────────────────────────────────── || SUKSES & GAGAL || ─────────────────────────────────── //
 
 
-        const embed = new Discord.MessageEmbed()
-            .setColor(message.client.color)
+        const embedsukses = new Discord.MessageEmbed()
+            .setColor(color)
 
+        // sukses
+        
         message.client.distube.voices.join(memberVC).then(voice => {
-          
-        embed.setDescription(`✔️ | Successfully **Join** the voice channel.`);
-        message.channel.send({ embeds: [embed] });
-          
+            embedsukses.setDescription(`${message.client.suksesJOIN}`);
+            message.channel.send({ embeds: [embedsukses] });
         })
-          
+        
+        // error
+      
         .catch(error => {
             console.error(error);
-            return message.channel.send(`❌ | An error occurred while trying to join the voice channel.\nTry using the **Play** command!`);
+            return message.channel.send(`${message.client.errorJOIN}`);
         });
 
 
