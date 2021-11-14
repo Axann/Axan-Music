@@ -19,22 +19,26 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
-    async execute(client, message, args) {
+    async execute(client, message, args, color) {
       
       
 // ─────────────────────────────────── || EXPORT IMPORT || ─────────────────────────────────── //
       
       
         const embed = new Discord.MessageEmbed()
+        .setColor(color)
 
         if (!args[0]) {
+          
             const commands = (category) => {
                 return message.client.commands.filter(cmd => cmd.category === category).map(cmd => `\`${cmd.name}\``).join(", ");
             }
-
-            embed.setTitle(`ℹ️ Command List`)
-            embed.setDescription(`● To get help on a specific command type \`${message.client.prefix}help <command>\`!\n\n`);
+            
+            embed.setTitle(`COMMAND LIST`)
+            embed.setDescription(`Help on a specific command type \`${message.client.prefix}help <command>\`!\n\n`);
+            embed.addField('MUSIC' , '```autoplay , filter , join , leave , loop , lyrics , nowplaying , pause , play , previous , queue , resume , search , shuffle , skip , skip')
             message.channel.send({ embeds: [embed] });
+          
         } else {
             let command = message.client.commands.find(cmd => cmd.name === args[0]) || message.client.commands.find(cmd => cmd.aliases.includes(args[0]))
             if (!command) return;
