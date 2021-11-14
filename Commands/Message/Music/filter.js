@@ -1,7 +1,7 @@
-// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
+// ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
 
 
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 
 
 // ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
@@ -19,34 +19,44 @@ module.exports = {
     memberPermissions: [],
     botPermissions: [ "SEND_MESSAGES" ],
     owner: false,
+      
+      
+// ─────────────────────────────────── || SYSTEM || ─────────────────────────────────── //
+
+
     async execute(client, message, args, color) {
-      
-      
-// ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
-      
-      
-      const emdebgagal = new MessageEmbed()
-                 .setColor(color)
+
+
+        const embedgagal = new Discord.MessageEmbed()
+            .setColor(color)
       
         const memberVC = message.member.voice.channel;
+      
+      
+// ─────────────────────────────────── || GA NAK VC || ─────────────────────────────────── //
+      
+      
         if (!memberVC){
-          
-          return message.channel.send(`❌ | You must be in a voice channel!`);
+          embedgagal .setDescription('<:N_:848429469688397854> ・ You must be in a voice channel!')
+          return message.channel.send({ embeds: [embedgagal] });
         } 
 
         const clientVC = message.guild.me.voice.channel;
-        if (!clientVC) return message.channel.send(`❌ | I'm not on any voice channel!`);
+        if (!clientVC){
+          embedgagal .setDescription('<:N_:848429469688397854> ・ Im not on any voice channel!')
+          return message.channel.send({ embeds: [embedgagal] });
+        } 
 
-        if (memberVC !== clientVC) return message.channel.send(`❌ | You must be in the same channel as ${message.client.user}!`);
+        if (memberVC !== clientVC) return message.channel.send(`<:N_:848429469688397854> ・ You must be in the same channel as ${message.client.user}!`);
 
         const queue = message.client.distube.getQueue(message);
-        if (!queue) return message.channel.send(`❌ | There is no music playing!`);
+        if (!queue) return message.channel.send(`<:N_:848429469688397854> ・ There is no music playing!`);
 
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setColor(message.client.color)
             .setFooter(`Request by ${message.author.tag}`, message.author.displayAvatarURL());
 
-        const embederror = new MessageEmbed()
+        const embederror = new Discord.MessageEmbed()
             .setColor("#ff0000");
 
         let filter = ['3d', 'bassboost', 'echo', 'flanger', 'gate', 'haas', 'karaoke', 'nightcore', 'reverse', 'vaporwave', 'mcompand', 'phaser', 'tremolo', 'surround', 'earwax'];
