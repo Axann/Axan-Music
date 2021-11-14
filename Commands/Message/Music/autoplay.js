@@ -1,7 +1,8 @@
 // ─────────────────────────────────── || MODULE || ─────────────────────────────────── //
 
 
-const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
+const audit = require("./audit.json");
 
 
 // ─────────────────────────────────── || EXPORT || ─────────────────────────────────── //
@@ -27,7 +28,7 @@ module.exports = {
     async execute(client, message, args, color) {
       
       
-        const embedgagal = new MessageEmbed()
+        const embedgagal = new Discord.MessageEmbed()
             .setColor(color)
       
         const memberVC = message.member.voice.channel;
@@ -37,7 +38,7 @@ module.exports = {
       
       
         if (!memberVC) {
-          embedgagal.setDescription('<:N_:848429469688397854> ・ You must be in a voice channel!')
+          embedgagal.setDescription(audit.mustVC)
           return message.channel.send({ embeds: [embedgagal] });
         } 
 
@@ -61,7 +62,7 @@ module.exports = {
 // ─────────────────────────────────── || MISAL SUKSES || ─────────────────────────────────── //
 
 
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
                 .setColor(color)
 
         if (!queue.autoplay) {
